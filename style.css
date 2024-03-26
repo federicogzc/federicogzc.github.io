@@ -7,8 +7,51 @@ body {
   align-items: center;
 }
 
+#image-container {
+  position: relative;
+}
+
 #rotating-image {
   max-width: 100%;
   max-height: 100%;
   transition: transform 3s ease;
+}
+
+.corner-button {
+  position: absolute;
+  width: 100px; /* Ajusta el ancho según sea necesario */
+  height: 50px; /* Ajusta la altura según sea necesario */
+  opacity: 0;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  background-color: #f2f2f2; /* Color de fondo */
+  color: black; /* Color del texto */
+  border: none; /* Sin bordes */
+  border-radius: 10px; /* Bordes redondeados */
+  font-size: 14px; /* Tamaño del texto */
+  padding: 10px; /* Espacio interno */
+  cursor: pointer; /* Cursor tipo puntero al pasar sobre el botón */
+}
+
+#top-left {
+  top: 0;
+  left: 0;
+  transform: translate(-100%, -100%);
+}
+
+#top-right {
+  top: 0;
+  right: 0;
+  transform: translate(100%, -100%);
+}
+
+#bottom-left {
+  bottom: 0;
+  left: 0;
+  transform: translate(-100%, 100%);
+}
+
+#bottom-right {
+  bottom: 0;
+  right: 0;
+  transform: translate(100%, 100%);
 }
