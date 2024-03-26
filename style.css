@@ -1,116 +1,14 @@
-/* Reset básico de estilos */
-.medievalsharp-regular {
-    font-family: "MedievalSharp", cursive;
-    font-weight: 400;
-    font-style: normal;
-  }
-  
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body, html {
-    height: 100%;
-    font-family: Arial, sans-serif;
-  }
-  
-  /* Imagen de fondo */
-  body {
-    background-image: url('fondo1Dragon.png');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  /* Estilos del menú */
-  #menu {
-    margin-top: 5mm; /* Ajusta este valor según necesites */
-  }
+body {
+  background-color: black;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-  #menu ul {
-    list-style: none;
-    text-align: right;
-    padding: 0; 
-    margin: 0;  
-  }
-  
-  #menu li {
-    display: inline;
-    margin-left: 10px;
-  }
-  
-  #menu a {
-    text-decoration: none;
-    color: #000;
-    padding: 5px 10px;
-    transition: background-color 0.3s;
-  }
-  
-  #menu a:hover {
-    background-color: #555;
-    color: white;
-  }
-  
-  /* Diseño responsivo */
-  @media (min-width: 768px) {
-    main {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 5mm;
-    }
-    
-    #left-sidebar a, #right-sidebar a:visited {
-      width: 100%;
-      min-height: 300px;
-      color: #000;
-      text-decoration: none;
-      padding: 1px;
-      display: block;
-    }
-    
-    #left-sidebar a h1 {
-        margin-top: 0.1em;    /* Establece un pequeño margen superior */
-        margin-bottom: 0.1em;
-        margin-left: 0.5em; /* Establece un pequeño margen inferior */
-        line-height: 1.2;     /* Controla la altura de la línea de los encabezados para un espaciado más ajustado */
-        color: #af1d12; /* Código de color hexadecimal para un dorado apagado */
-        text-shadow: 1px 1px #000; /* Sombra de texto opcional para mejorar la legib*/
- 
-        
-    }
-    
-    #center-content {
-      width: 60%;
-      min-height: 300px;
-      padding: 20px;
-      /* Hacer el contenido central transparente */
-      background: transparent;
-    }
-  }
-  
-  @media (max-width: 767px) {
-    #menu ul {
-      text-align: center;
-    }
-    
-    #left-sidebar, #right-sidebar, #center-content {
-      width: auto;
-      margin: 10px;
-      padding: 10px;
-      background: rgba(255,255,255,0.9);
-    }
-  }
-  
-  /* Footer */
-  footer {
-    text-align: center;
-    padding: 10px;
-    background: #333;
-    color: white;
-    margin-top: auto;
-  }
-  
+#rotating-image {
+  max-width: 100%;
+  max-height: 100%;
+  transition: transform 3s ease;
+}
