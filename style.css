@@ -2,9 +2,14 @@ body {
   background-color: black;
   margin: 0;
   height: 100vh;
+}
+
+#content {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column; /* Alineación vertical */
+  height: 100%;
 }
 
 #image-container {
@@ -12,10 +17,29 @@ body {
 }
 
 #rotating-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   max-width: 100%;
   max-height: 100%;
-  transition: transform 3s ease;
+  
 }
+
+#page-title {
+  width: 100%;
+  text-align:center;
+  color: rgb(191, 23, 23); 
+  font-size: 2em; /* O el tamaño que prefieras */
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.hidden {
+  transform: translateY(0); /* Muestra el título */
+   opacity: 0;
+} 
+  
+
 
 .corner-button {
   position: absolute;
@@ -24,10 +48,10 @@ body {
   opacity: 0;
   transition: opacity 0.5s ease, transform 0.5s ease;
   background-color: #f2f2f2; /* Color de fondo */
-  color: black; /* Color del texto */
-  border: none; /* Sin bordes */
-  border-radius: 10px; /* Bordes redondeados */
-  font-size: 14px; /* Tamaño del texto */
+  color: black; 
+  border: none; 
+  border-radius: 10px; 
+  font-size: 14px; 
   padding: 10px; /* Espacio interno */
   cursor: pointer; /* Cursor tipo puntero al pasar sobre el botón */
 }
@@ -55,3 +79,22 @@ body {
   right: 0;
   transform: translate(100%, 100%);
 }
+
+.spinner {
+  width: 250px;
+  height: 250px;
+  text-align: center;
+  border-radius: 200px;
+  animation: spinning82341 1.5s linear infinite;
+  box-shadow: 0px -5px 20px 0px rgb(191, 23, 23), 0px 5px 20px 0px rgb(31, 13, 122);
+  position: relative;
+}
+
+@keyframes spinning82341 {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+
