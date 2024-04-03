@@ -15,10 +15,10 @@ document.getElementById("rotating-image").addEventListener("click", function() {
         } else { // Ocultar botones y titulo
             let id = button.id;
             let transform = "";
-            if(id === "top-left") transform = "translate(-100%, -100%)";
-            if(id === "top-right") transform = "translate(100%, -100%)";
-            if(id === "bottom-left") transform = "translate(-100%, 100%)";
-            if(id === "bottom-right") transform = "translate(100%, 100%)";
+            if(id === "top-left") transform = "translate(100px, 50px)";
+            if(id === "top-right") transform = "translate(-100px, 50px)";
+            if(id === "bottom-left") transform = "translate(100px, -50px)";
+            if(id === "bottom-right") transform = "translate(-100px, -50px)";
             button.style.opacity = "0";
             button.style.transform = transform;
             pageTitle.classList.add('hidden');
