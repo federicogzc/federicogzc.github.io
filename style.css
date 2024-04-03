@@ -42,42 +42,47 @@ body {
 
 
 .corner-button {
-  position: absolute;
-  width: 100px; /* Ajusta el ancho según sea necesario */
-  height: 50px; /* Ajusta la altura según sea necesario */
+  position: fixed; /* Cambiado de absolute a fixed */
+  width: 100px;
+  height: 50px;
   opacity: 0;
-  transition: opacity 0.5s ease, transform 0.5s ease;
-  background-color: #f2f2f2; /* Color de fondo */
-  color: black; 
-  border: none; 
-  border-radius: 10px; 
-  font-size: 14px; 
-  padding: 10px; /* Espacio interno */
-  cursor: pointer; /* Cursor tipo puntero al pasar sobre el botón */
+  transition: opacity 0.5s ease;
+  background-color: #f2f2f2;
+  color: black;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10; /* Asegurarse de que estén sobre la mayoría de los otros elementos */
 }
 
 #top-left {
-  top: 0;
-  left: 0;
-  transform: translate(-100%, -100%);
+  top: calc(50% - 35px); /* Ajustar la distancia vertical desde el centro */
+  left: calc(30% - 55px); /* Ajustar la distancia horizontal desde el centro */
 }
 
 #top-right {
-  top: 0;
-  right: 0;
-  transform: translate(100%, -100%);
+  top: calc(50% - 35px);
+  right: calc(30% - 55px);
 }
 
-#bottom-left {
-  bottom: 0;
-  left: 0;
-  transform: translate(-100%, 100%);
+#bottom-left{
+  bottom: calc(40% - 15px);
+  left: calc(30% - 55px);
 }
 
 #bottom-right {
-  bottom: 0;
-  right: 0;
-  transform: translate(100%, 100%);
+  bottom: calc(40% - 15px);
+  right: calc(30% - 55px);
+}
+
+#page-title {
+  z-index: 5; /* Menor que los botones para evitar superposición */
+}
+
+#rotating-image {
+  z-index: 3; /* Asegurar que la imagen no cubra los botones */
 }
 
 .spinner {
@@ -86,7 +91,7 @@ body {
   text-align: center;
   border-radius: 200px;
   animation: spinning82341 1.5s linear infinite;
-  box-shadow: 0px -5px 20px 0px rgb(191, 23, 23), 0px 5px 20px 0px rgb(31, 13, 122);
+  box-shadow: 0px -5px 20px 0px rgb(191, 23, 23), 0px 5px 20px 0px rgb(47, 2, 83);
   position: relative;
 }
 
@@ -95,6 +100,4 @@ body {
     transform: rotate(360deg);
   }
 }
-
-
 
