@@ -2,14 +2,27 @@ body {
   background-color: black;
   margin: 0;
   height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 #content {
   display: flex;
   justify-content: center;
-  align-items: flex-start; /* Mueve los elementos hacia arriba */
+  align-items: center;
   flex-direction: column;
+  width: 100%;
   height: 100%;
+}
+
+#page-title {
+  text-align: center;
+  color: rgb(191, 23, 23); 
+  font-size: 2em;
+  margin-top: 20px; /* Ajusta el margen superior para mover el título hacia arriba */
+  margin-bottom: 40px; /* Añade margen inferior para separar el título del dragón */
 }
 
 #image-container {
@@ -23,67 +36,6 @@ body {
   transform: translate(-50%, -50%);
   max-width: 100%;
   max-height: 100%;
-  
-}
-
-#page-title {
-  width: 100%;
-  text-align: center;
-  color: rgb(191, 23, 23); 
-  font-size: 2em;
-  transition: transform 0.5s ease, opacity 0.5s ease;
-  margin-top: 20px; /* Ajusta el margen superior para mover el título hacia arriba */
-}
-
-.hidden {
-  transform: translateY(0); /* Muestra el título */
-   opacity: 0;
-} 
-  
-
-
-.corner-button {
-  position: fixed; /* Cambiado de absolute a fixed */
-  width: 100px;
-  height: 50px;
-  opacity: 0;
-  transition: opacity 0.5s ease;
-  background-color: #f2f2f2;
-  color: black;
-  border: none;
-  border-radius: 10px;
-  font-size: 14px;
-  padding: 10px;
-  cursor: pointer;
-  z-index: 10; /* Asegurarse de que estén sobre la mayoría de los otros elementos */
-}
-
-#top-left {
-  top: calc(40% - 35px); /* Incrementa la distancia desde el centro hacia arriba */
-  left: calc(30% - 55px);
-}
-
-#top-right {
-  top: calc(40% - 35px);
-  right: calc(30% - 55px);
-}
-
-#bottom-left {
-  bottom: calc(30% - 15px); /* Incrementa la distancia desde el centro hacia abajo */
-  left: calc(30% - 55px);
-}
-
-#bottom-right {
-  bottom: calc(30% - 15px);
-  right: calc(30% - 55px);
-}
-
-#page-title {
-  z-index: 5; /* Menor que los botones para evitar superposición */
-}
-
-#rotating-image {
-  z-index: 3; /* Asegurar que la imagen no cubra los botones */
 }
 
 .spinner {
@@ -96,9 +48,49 @@ body {
   position: relative;
 }
 
+.corner-button {
+  position: fixed; 
+  width: 120px;
+  height: 50px;
+  opacity: 0;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  background-color: #f2f2f2;
+  color: black;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+#top-left {
+  top: 35%;
+  left: 10%;
+}
+
+#top-right {
+  top: 35%;
+  right: 10%;
+}
+
+#bottom-left{
+  bottom: 25%;
+  left: 10%;
+}
+
+#bottom-right {
+  bottom: 25%;
+  right: 10%;
+}
+
+.hidden {
+  opacity: 0;
+  transform: translateY(0);
+}
+
 @keyframes spinning82341 {
   to {
     transform: rotate(360deg);
   }
 }
-
