@@ -7,8 +7,8 @@ body {
 #content {
   display: flex;
   justify-content: center;
-  align-items: center;
-  flex-direction: column; /* Alineación vertical */
+  align-items: flex-start; /* Mueve los elementos hacia arriba */
+  flex-direction: column;
   height: 100%;
 }
 
@@ -28,10 +28,11 @@ body {
 
 #page-title {
   width: 100%;
-  text-align:center;
+  text-align: center;
   color: rgb(191, 23, 23); 
-  font-size: 2em; /* O el tamaño que prefieras */
+  font-size: 2em;
   transition: transform 0.5s ease, opacity 0.5s ease;
+  margin-top: 20px; /* Ajusta el margen superior para mover el título hacia arriba */
 }
 
 .hidden {
@@ -58,22 +59,22 @@ body {
 }
 
 #top-left {
-  top: calc(50% - 35px); /* Ajustar la distancia vertical desde el centro */
-  left: calc(30% - 55px); /* Ajustar la distancia horizontal desde el centro */
+  top: calc(40% - 35px); /* Incrementa la distancia desde el centro hacia arriba */
+  left: calc(30% - 55px);
 }
 
 #top-right {
-  top: calc(50% - 35px);
+  top: calc(40% - 35px);
   right: calc(30% - 55px);
 }
 
-#bottom-left{
-  bottom: calc(40% - 15px);
+#bottom-left {
+  bottom: calc(30% - 15px); /* Incrementa la distancia desde el centro hacia abajo */
   left: calc(30% - 55px);
 }
 
 #bottom-right {
-  bottom: calc(40% - 15px);
+  bottom: calc(30% - 15px);
   right: calc(30% - 55px);
 }
 
