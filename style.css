@@ -23,12 +23,11 @@ body {
   transform: translate(-50%, -50%);
   max-width: 100%;
   max-height: 100%;
-  
 }
 
 #page-title {
   width: 100%;
-  text-align:center;
+  text-align: center;
   color: rgb(191, 23, 23); 
   font-size: 2em; /* O el tamaño que prefieras */
   transition: transform 0.5s ease, opacity 0.5s ease;
@@ -36,45 +35,43 @@ body {
 
 .hidden {
   transform: translateY(0); /* Muestra el título */
-   opacity: 0;
-} 
-  
-
+  opacity: 0;
+}
 
 .corner-button {
-  position: fixed; /* Cambiado de absolute a fixed */
-  width: 100px;
-  height: 50px;
+  position: fixed;
+  width: 120px; /* Aumentar el ancho de los botones */
+  height: 60px; /* Aumentar la altura de los botones */
   opacity: 0;
   transition: opacity 0.5s ease;
   background-color: #f2f2f2;
   color: black;
   border: none;
   border-radius: 10px;
-  font-size: 14px;
+  font-size: 16px; /* Aumentar el tamaño de la fuente */
   padding: 10px;
   cursor: pointer;
   z-index: 10; /* Asegurarse de que estén sobre la mayoría de los otros elementos */
 }
 
 #top-left {
-  top: calc(50% - 35px); /* Ajustar la distancia vertical desde el centro */
-  left: calc(30% - 55px); /* Ajustar la distancia horizontal desde el centro */
+  top: calc(50% - 45px); /* Ajustar la distancia vertical desde el centro */
+  left: calc(30% - 65px); /* Ajustar la distancia horizontal desde el centro */
 }
 
 #top-right {
-  top: calc(50% - 35px);
-  right: calc(30% - 55px);
+  top: calc(50% - 45px);
+  right: calc(30% - 65px);
 }
 
-#bottom-left{
-  bottom: calc(40% - 15px);
-  left: calc(30% - 55px);
+#bottom-left {
+  bottom: calc(40% - 25px);
+  left: calc(30% - 65px);
 }
 
 #bottom-right {
-  bottom: calc(40% - 15px);
-  right: calc(30% - 55px);
+  bottom: calc(40% - 25px);
+  right: calc(30% - 65px);
 }
 
 #page-title {
