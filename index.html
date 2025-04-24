@@ -1,24 +1,114 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portafolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Federico Calderón</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      display: flex;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+      background-color: #111;
+      color: #fff;
+    }
+
+    .sidebar {
+      width: 200px;
+      background-color: #222;
+      padding: 20px;
+      box-shadow: 2px 0 5px rgba(0,0,0,0.3);
+    }
+
+    .sidebar h2 {
+      font-size: 1.5em;
+      color: #e91e63;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .sidebar ul li {
+      margin: 15px 0;
+    }
+
+    .sidebar ul li a {
+      color: #ddd;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .sidebar ul li a:hover {
+      color: #fff;
+    }
+
+    .main-content {
+      flex: 1;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .nombre {
+      font-size: 3em;
+      color: #e91e63;
+    }
+
+    .links {
+      margin: 20px 0;
+    }
+
+    .links a {
+      margin: 0 15px;
+      font-size: 1.2em;
+      color: #4caf50;
+      text-decoration: none;
+    }
+
+    .links a:hover {
+      text-decoration: underline;
+    }
+
+    .dragon-container {
+      margin-top: 40px;
+      position: relative;
+    }
+
+    .dragon-icon {
+      width: 200px;
+      height: auto;
+      transition: transform 0.5s ease;
+    }
+
+    .dragon-icon:hover {
+      transform: translateX(50px) rotate(10deg);
+    }
+  </style>
 </head>
 <body>
-  <div id="content">
-    <h1 id="page-title" class="hidden">I can help you with</h1>
-    <div id="image-container">
-      <div class="spinner"></div>
-      <img id="rotating-image" src="dragoniconbutton.png" alt="Imagen Giratoria">
-      <button class="corner-button" id="top-left"> Marketing</button>
-      <button class="corner-button" id="top-right">Artifical Intelligence</button>
-      <button class="corner-button" id="bottom-left">Websites</button>
-      <button class="corner-button" id="bottom-right">Contact Me</button>
-      
+  <div class="sidebar">
+    <h2>Menú</h2>
+    <ul>
+      <li><a href="#yo">Yo</a></li>
+      <li><a href="#trabajos">Trabajos</a></li>
+      <li><a href="#otros">Otros</a></li>
+    </ul>
+  </div>
+  <div class="main-content">
+    <h1 class="nombre">Federico Calderón</h1>
+    <div class="links">
+      <a href="https://www.linkedin.com/in/federicogzc" target="_blank">LinkedIn</a>
+      <a href="https://github.com/federicogzc" target="_blank">GitHub</a>
+    </div>
+    <div class="dragon-container">
+      <img src="dragoniconbutton.png" alt="Icono Dragón" class="dragon-icon">
     </div>
   </div>
-  <script src="script.js"></script>
 </body>
 </html>
