@@ -1,99 +1,57 @@
+/* style.css */
+
+/* Estilos para el canvas de partículas si es necesario (aunque Tailwind lo maneja bien) */
+#particle-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Asegura que esté detrás de todo */
+    opacity: 0.15; /* Ajusta la opacidad de las partículas */
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Animación para el icono del dragón al hacer clic (ejemplo) */
+#dragon-icon.clicked {
+    animation: dragonSpin 0.7s ease-out;
+}
+
+@keyframes dragonSpin {
+    0% { transform: scale(1.1) rotate(0deg); }
+    50% { transform: scale(1.2) rotate(180deg); }
+    100% { transform: scale(1.1) rotate(360deg); }
+}
+
+/* Estilos para la barra de scroll (opcional, para mejorar estética en navegadores WebKit) */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1f2937; /* Un color de fondo oscuro para el track */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #E91E63; /* Color primario */
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #c2185b; /* Un tono más oscuro del primario al pasar el mouse */
+}
+
+/* Asegurar que el contenido principal no se solape con el header fijo */
 body {
-  background-color: black;
-  margin: 0;
-  height: 100vh;
+    padding-top: 72px; /* Ajusta esto según la altura de tu header */
 }
 
-#content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column; /* Alineación vertical */
-  height: 100%;
+/* Pequeño ajuste para el anclaje de las secciones con header fijo */
+section[id] {
+  scroll-margin-top: 72px; /* Debe coincidir con el padding-top del body o la altura del header */
 }
 
-#image-container {
-  position: relative;
-}
-
-#rotating-image {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  max-width: 100%;
-  max-height: 100%;
-}
-
-#page-title {
-  width: 100%;
-  text-align: center;
-  color: rgb(191, 23, 23); 
-  font-size: 2em; /* O el tamaño que prefieras */
-  transition: transform 0.5s ease, opacity 0.5s ease;
-}
-
-.hidden {
-  transform: translateY(0); /* Muestra el título */
-  opacity: 0;
-}
-
-.corner-button {
-  position: fixed;
-  width: 120px; /* Aumentar el ancho de los botones */
-  height: 60px; /* Aumentar la altura de los botones */
-  opacity: 0;
-  transition: opacity 0.5s ease;
-  background-color: #f2f2f2;
-  color: black;
-  border: none;
-  border-radius: 10px;
-  font-size: 16px; /* Aumentar el tamaño de la fuente */
-  padding: 10px;
-  cursor: pointer;
-  z-index: 10; /* Asegurarse de que estén sobre la mayoría de los otros elementos */
-}
-
-#top-left {
-  top: calc(50% - 45px); /* Ajustar la distancia vertical desde el centro */
-  left: calc(30% - 65px); /* Ajustar la distancia horizontal desde el centro */
-}
-
-#top-right {
-  top: calc(50% - 45px);
-  right: calc(30% - 65px);
-}
-
-#bottom-left {
-  bottom: calc(40% - 25px);
-  left: calc(30% - 65px);
-}
-
-#bottom-right {
-  bottom: calc(40% - 25px);
-  right: calc(30% - 65px);
-}
-
-#page-title {
-  z-index: 5; /* Menor que los botones para evitar superposición */
-}
-
-#rotating-image {
-  z-index: 3; /* Asegurar que la imagen no cubra los botones */
-}
-
-.spinner {
-  width: 250px;
-  height: 250px;
-  text-align: center;
-  border-radius: 200px;
-  animation: spinning82341 1.5s linear infinite;
-  box-shadow: 0px -5px 20px 0px rgb(191, 23, 23), 0px 5px 20px 0px rgb(47, 2, 83);
-  position: relative;
-}
-
-@keyframes spinning82341 {
-  to {
-    transform: rotate(360deg);
-  }
-}
